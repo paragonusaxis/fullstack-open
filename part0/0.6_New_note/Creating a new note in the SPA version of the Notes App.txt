@@ -1,0 +1,20 @@
+title Creating a new note in the SPA version of the Notes App
+
+note over Browser:
+User fills form and press the submit button.
+The browser calls a callback function that 
+does the following:
+1 - Impedes the default handling of the form submit;
+2 - Creates the new note;
+3 - Adds the note to the notes' list;
+4 - Redraws the notes on the site;
+5 - Sends the note to the server as a JSON. 
+end note
+
+Browser->Server: HTTP POST: https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over Server:
+The server processes the new note. The
+Status HTTP 201 indicates that a resource
+has been created.
+end note
