@@ -1,0 +1,35 @@
+title Sending a new note 
+
+note over Browser:
+User fills form and press the submit button.
+end note
+
+Browser->Server: HTTP POST: https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over Server:
+Server processes the note.
+Server responds with HTTP Status Code 302. 
+Server asks the browser to perform a new 
+HTTP GET Request.
+end note
+
+Browser->Server: HTTP GET: https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->Browser: HTML
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css 
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: main.js
+
+note over Browser:
+Browser executes the javascript code
+that requests the JSON data from server. 
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: data.json
+
+note over Browser:
+After the request is complete, the browser calls
+the callback function that adds the notes to the
+site being displayed.
+end note
