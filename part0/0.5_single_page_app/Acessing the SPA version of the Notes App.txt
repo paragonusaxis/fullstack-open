@@ -1,0 +1,22 @@
+title Acessing the SPA version of the Notes App
+
+Browser->Server: HTTP GET: https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->Browser: HTML
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css 
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server-->Browser: spa.js
+
+note over Browser:
+Browser executes the javascript code
+that requests the JSON data from the server. 
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: data.json
+
+note over Browser:
+After the request is complete, the browser calls
+the callback function that adds the notes to the
+site being displayed.
+end note
